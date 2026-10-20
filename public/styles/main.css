@@ -635,6 +635,23 @@ audio {
   color:var(--muted)
 }
 
+.footer-credit {
+  text-align:center
+}
+
+.footer-credit p+p {
+  margin-top:6px
+}
+
+.footer-credit a {
+  text-decoration:underline;
+  text-underline-offset:3px
+}
+
+.footer-credit a:hover {
+  color:var(--amber)
+}
+
 .back-top {
   text-transform:uppercase;
   letter-spacing:1px
@@ -1000,9 +1017,13 @@ audio {
   }
 
   .site-footer p {
+    font-size:9px
+  }
+
+  .site-footer .footer-credit {
     order:3;
     width:100%;
-    font-size:9px
+    text-align:left
   }
 
   .site-footer .wordmark {
