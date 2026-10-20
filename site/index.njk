@@ -6,19 +6,7 @@
   <meta name="theme-color" content="#111110">
   <meta name="description" content="Full Rank — original music from Bacolod City, Philippines. Watch the band live, explore the music, and step inside the rehearsal room.">
   <title>Full Rank — Original music. Live and loud.</title>
-  <script>
-    // Preserve production analytics without tracking local preview visits.
-    if (!["localhost", "127.0.0.1", "::1"].includes(location.hostname)) {
-      const analytics = document.createElement("script");
-      analytics.async = true;
-      analytics.src = "https://www.googletagmanager.com/gtag/js?id=G-S2RKQ7Q046";
-      document.head.appendChild(analytics);
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag("js", new Date());
-      gtag("config", "G-S2RKQ7Q046");
-    }
-  </script>
+  <script src="/scripts/analytics.js" defer></script>
   <link rel="preload" href="fonts/oswald-variable.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="media/band-portrait.webp" as="image">
   <link rel="stylesheet" href="/styles/main.css">
