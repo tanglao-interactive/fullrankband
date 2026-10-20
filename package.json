@@ -4,13 +4,13 @@
   "private": true,
   "description": "Full Rank Band website and Amplify Gen 2 CMS.",
   "scripts": {
-    "start": "vite --mode offline",
-    "start:aws": "vite --mode sandbox",
+    "start": "FULLRANK_OFFLINE=1 eleventy --serve --port=5173",
+    "start:aws": "eleventy --serve --port=5173",
     "sandbox": "AWS_PROFILE=franznoel AWS_REGION=us-west-1 ampx sandbox --identifier fullrankband --once",
     "sandbox:watch": "AWS_PROFILE=franznoel AWS_REGION=us-west-1 ampx sandbox --identifier fullrankband",
-    "build": "vite build",
-    "build:local": "vite build --mode offline",
-    "preview": "vite preview",
+    "build": "eleventy",
+    "build:local": "FULLRANK_OFFLINE=1 eleventy",
+    "preview": "eleventy --serve --port=4173",
     "typecheck": "tsc --noEmit",
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
     "migrate:export": "node scripts/export-firebase.mjs",
@@ -19,6 +19,7 @@
     "verify:sandbox": "node scripts/verify-sandbox.mjs"
   },
   "devDependencies": {
+    "@11ty/eleventy": "3.1.7",
     "@aws-amplify/backend": "1.25.1",
     "@aws-amplify/backend-cli": "1.10.0",
     "@types/aws-lambda": "8.10.164",
@@ -27,8 +28,7 @@
     "aws-cdk-lib": "2.273.0",
     "constructs": "10.8.1",
     "esbuild": "0.28.2",
-    "typescript": "7.0.2",
-    "vite": "8.3.4"
+    "typescript": "7.0.2"
   },
   "dependencies": {
     "@aws-sdk/client-cognito-identity-provider": "3.1153.0",
@@ -38,5 +38,10 @@
     "@aws-sdk/lib-dynamodb": "3.1153.0",
     "aws-amplify": "6.22.2"
   },
-  "type": "module"
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25",
+    "npm": ">=10 <11"
+  },
+  "packageManager": "npm@10.9.4"
 }

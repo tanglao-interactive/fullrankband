@@ -1,13 +1,17 @@
 # Full Rank Band
 
-The Full Rank website and CMS use AWS Amplify Gen 2, Cognito, Amplify Data
+Eleventy generates the Full Rank website and admin HTML. A small esbuild step bundles
+the browser scripts for the existing CMS, which uses AWS Amplify Gen 2, Cognito, Amplify Data
 (AppSync/DynamoDB), and S3. The approved charcoal, warm-white, and amber design
 uses the band's actual portrait, artwork, performance videos, and rehearsal audio.
 No production deployment or DNS cutover is performed by local development commands.
+Eleventy templates live in `site/`, static assets in `public/`, and browser scripts
+in `src/`. Output is plain HTML, CSS, media, and JavaScript in `dist/`.
 
 ## Offline preview
 
-Use Node.js 22 or later (Node 24 recommended):
+Use Node.js 24 and npm 10.9.4 (`.nvmrc` and `package.json` pin the supported versions).
+The committed `.npmrc` applies the same peer-dependency policy locally and in CI:
 
 ```sh
 npm ci
@@ -16,15 +20,15 @@ npm start
 
 Open **http://127.0.0.1:5173/**. No AWS credentials, Firebase, or Java are required.
 The homepage uses bundled defaults and curated media. `/admin/` clearly identifies
-the offline mode and disables editing. The port is fixed; stop an existing Vite
-instance before starting another rather than changing backend ports.
+the offline mode and disables editing. Stop an existing Eleventy instance before starting another.
 
 ```sh
 npm run build:local
 npm run preview
 ```
 
-The built offline preview is at **http://127.0.0.1:4173/**.
+For an offline build, use `FULLRANK_OFFLINE=1 npm run preview` to serve it at
+**http://127.0.0.1:4173/**. Preview regenerates the same static output.
 
 ## AWS sandbox and full CMS
 
@@ -41,7 +45,7 @@ npm run start:aws
 writes ignored `amplify_outputs.json`. It creates billable AWS resources but does
 not create an Amplify Hosting site or change DNS. `sandbox:watch` is an optional
 human-operated watcher. The frontend command reads sandbox outputs and runs on
-5173; stop the offline server with Ctrl-C first. Reload/restart Vite after sandbox
+5173; stop the offline server with Ctrl-C first. Reload/restart Eleventy after sandbox
 outputs change. Stop development servers with Ctrl-C for a clean shutdown.
 
 Cognito has no public self-registration. Only users in the `Admins` group may
@@ -67,13 +71,18 @@ npm run check:build
 npm run preview
 ```
 
+The committed lockfile includes explicit nested OpenTelemetry entries missing from
+Amplify’s bundled dependency metadata. After dependency updates, validate with
+`npx npm@10.9.4 ci` before pushing.
+
 `build` requires Amplify outputs and creates `dist/`. It refuses to silently build
 an offline CMS for production. The frontend has two entrypoints: `/` and
 `/admin/index.html`. Configure the exact `/admin` → `/admin/index.html` HTTP 200
 rewrite from `docs/amplify-rewrites.json`; do not add an SPA catch-all that masks
 missing media. Amplify's Git pipeline uses `amplify.yml`; configure Hosting
-headers from `customHttp.yml` before production release. Do not connect or deploy
-the production branch until preview approval.
+headers from `customHttp.yml`. Hosting currently uses Amplify app `d3dzwpn8nt32ng`
+in `us-west-2`; the isolated development sandbox remains in `us-west-1`.
+Production backend deployment is managed by the Hosting pipeline.
 
 ## Migration and rollback
 
