@@ -29,7 +29,7 @@ newer-edit protection, and old-poster default normalization.
 Live administrator invitation delivery and password-reset email delivery require
 separate explicit approval and are not exercised by the migration.
 
-## Completed results
+## Initial sandbox results (October 19, 2026)
 
 - Sandbox deployed successfully; no Amplify Hosting app, production branch, or DNS
   association was created.
@@ -52,3 +52,28 @@ separate explicit approval and are not exercised by the migration.
   first login.
 - Compiled local preview: http://127.0.0.1:4173/ (uses the sandbox backend).
   `npm start` serves the independent offline preview on 5173.
+
+
+## Eleventy production release (October 20, 2026)
+
+- Replaced Vite with Eleventy 3.1.7. Both pages are generated from `site/`;
+  esbuild bundles the existing CMS browser scripts. Curated media and design remain.
+- Fixed the clean-install failure using npm 10.9.4, a consistent peer policy,
+  and explicit missing nested OpenTelemetry entries in the dependency lockfile.
+  Fresh `npm ci`, type checks, all four tests, offline/connected builds, and
+  artifact checks passed locally. Production dependency audit: zero advisories.
+- Existing Amplify Hosting app `d3dzwpn8nt32ng` in `us-west-2` is connected to
+  `tanglao-interactive/fullrankband`. Job 2 succeeded for commit `de6b9ed`.
+  The development sandbox in `us-west-1` remains intact.
+- Corrected `/admin` routing and removed the SPA catch-all. Automatic branch builds
+  are disabled; pushing code does not itself publish another release.
+- Production backend created successfully. Imported one default homepage and
+  recreated two administrators with invitations suppressed. No source events or
+  referenced Firebase uploads existed to migrate. Private results are in
+  `production-migration-report.json` and `production-invitation-list.json` beside
+  the original private backup. No invitations or password-reset emails were sent.
+- Verified `https://fullrankband.com/` shows the redesign, portrait and artwork
+  load, rehearsal audio plays, live video plays, booking links to the public email,
+  and `/admin` shows the connected login. No browser warnings/errors were observed.
+- Route 53 records were not changed during this release. The existing apex alias
+  points to this Amplify distribution. `www` remains unconfigured.
