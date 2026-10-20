@@ -1092,3 +1092,14 @@ audio {
   .featured-video-copy h3 {font-size:30px}
   .social-links {justify-content:flex-start}
 }
+
+.booking-contact summary {cursor:pointer;list-style:none}
+.booking-contact summary::-webkit-details-marker {display:none}
+.contact-options {margin-top:20px;max-width:440px}
+.contact-options p {font-size:14px;overflow-wrap:anywhere}
+.contact-options #booking-address {color:var(--amber);text-decoration:underline;text-underline-offset:3px}
+.contact-options .streaming-links {margin-top:14px}
+.contact-options button {border:1px solid var(--rule);background:transparent;color:var(--amber);padding:11px 14px;font:inherit;font-size:11px;letter-spacing:1px;cursor:pointer}
+.contact-options button:hover {border-color:var(--amber)}
+.contact-options button:focus-visible {outline:2px solid var(--amber);outline-offset:4px}
+#booking-copy-status {margin-top:12px}

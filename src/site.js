@@ -71,7 +71,14 @@ import { cloudEnabled, publicContent } from './backend';
     const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     contact.hidden = !validEmail;
     document.getElementById("booking-pending").hidden = validEmail;
-    if (validEmail) contact.href = `mailto:${email}?subject=Full%20Rank%20booking%20inquiry`;
+    if (validEmail) {
+      const mailto = `mailto:${encodeURIComponent(email)}?subject=Full%20Rank%20booking%20inquiry`;
+      const address = document.getElementById("booking-address");
+      address.textContent = email;
+      address.href = mailto;
+      document.getElementById("booking-email-app").href = mailto;
+      document.getElementById("booking-gmail").href = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=Full%20Rank%20booking%20inquiry`;
+    }
   }
   function renderEvents(events = []) {
     const grid = document.getElementById("events-grid");
@@ -94,6 +101,15 @@ import { cloudEnabled, publicContent } from './backend';
       card.appendChild(body); grid.appendChild(card);
     });
   }
+  document.getElementById("booking-copy").addEventListener("click", async () => {
+    const status = document.getElementById("booking-copy-status");
+    try {
+      await navigator.clipboard.writeText(document.getElementById("booking-address").textContent);
+      status.textContent = "Email address copied.";
+    } catch {
+      status.textContent = "Select and copy the email address shown above.";
+    }
+  });
   renderPage();
   renderEvents();
   if (cloudEnabled) {
