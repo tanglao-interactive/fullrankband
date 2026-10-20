@@ -28,5 +28,20 @@
     "source_filename": "2-BOT.mp3",
     "source_sha256": "9809efa12a817b58feed0a98d4a494c3e4bc0ff067f2ac96a9dd961037ee4aef",
     "use": "Rehearsal audio"
+  },
+  {
+    "asset": "sawi.webp",
+    "source_url": "https://www.instagram.com/fullrankofficial/p/DX92M1WPzbd/",
+    "source_sha256": "e5fee6b7599094e1a825850f5199b8fe0914254e317e6a8d963140f35b524095",
+    "processing": "Resized original artwork to 900px WebP."
+  },
+  {
+    "asset": "sawi-11th-hub.mp4",
+    "poster": "sawi-11th-hub.webp",
+    "source_url": "https://www.instagram.com/fullrankofficial/reel/DZGOgQtTXCL/",
+    "source_video_sha256": "877a46757dd4808a755f74756feae1de769dfd28be4365251689ebf6cefa1db9",
+    "source_audio_sha256": "61fd1f635c0857b10e5057ed3bbd7f52c65aa54d7033fc005a93cd378ac16ba9",
+    "processing": "Original 360x364 H.264 video retained; audio converted to AAC, muxed with fast start. Poster from 8 seconds.",
+    "use": "Sawi live at 11th Hub"
   }
 ]

@@ -1074,3 +1074,21 @@ audio {
   }
 
 }
+
+/* Release destinations and the featured 11th Hub session. */
+.streaming-links,.social-links {display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.streaming-links a {border:1px solid var(--rule);padding:11px 14px;font-size:11px;letter-spacing:1px;color:var(--amber);transition:border-color .2s}
+.streaming-links a:hover {border-color:var(--amber)}
+.streaming-links a:focus-visible,.social-links a:focus-visible {outline:2px solid var(--amber);outline-offset:4px}
+.video-card--featured {grid-column:1 / -1;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;margin-bottom:16px;scroll-margin-top:30px}
+.video-card--featured .video-frame {aspect-ratio:1}
+.featured-video-copy h3 {font-family:var(--font-display,'Oswald',sans-serif);font-size:clamp(28px,4vw,48px);line-height:1.15;margin:18px 0}
+.featured-video-copy .media-duration {display:block;margin-top:22px}
+.social-links {justify-content:center;margin:0 0 12px;gap:20px;font-size:11px}
+@media(max-width:640px) {
+  .streaming-links {gap:7px;margin-top:16px}
+  .streaming-links a {font-size:10px;padding:10px}
+  .video-card--featured {grid-template-columns:1fr;gap:20px;margin-bottom:10px}
+  .featured-video-copy h3 {font-size:30px}
+  .social-links {justify-content:flex-start}
+}
