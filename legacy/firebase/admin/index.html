@@ -68,11 +68,11 @@
             <input name="heroSubtitle" type="text">
           </label>
           <label>
-            Hero date
+            Hero detail (optional)
             <input name="heroDate" type="text">
           </label>
           <label>
-            Venue name
+            Show note: venue (optional)
             <input name="venueName" type="text">
           </label>
           <label>
@@ -97,7 +97,11 @@
           </label>
           <label class="wide">
             Hero image URL
-            <input name="heroImageUrl" type="url">
+            <input name="heroImageUrl" type="text" inputmode="url" placeholder="media/band-portrait.webp or https://…">
+          </label>
+          <label class="wide">
+            Booking email
+            <input name="bookingEmail" type="email" placeholder="admin@fullrankband.com">
           </label>
           <label class="wide">
             Custom HTML
@@ -180,6 +184,7 @@
   <script src="/__/firebase/10.12.5/firebase-storage-compat.js"></script>
   <script src="/__/firebase/init.js"></script>
   <script src="../scripts/firebase-app.js"></script>
+  <script src="../scripts/page-defaults.js"></script>
   <script src="../scripts/admin.js"></script>
 </body>
 </html>

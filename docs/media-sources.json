@@ -1,0 +1,32 @@
+[
+  {
+    "asset": "band-portrait.webp",
+    "source_filename": "735625125_1540371411144744_3979002268738664866_n.jpg",
+    "source_sha256": "8273c1bd12b0620a6c9f96634c4db664239ac078d849161e89a62f2e7c591a4d"
+  },
+  {
+    "asset": "ngiti-hanggang-langit.webp",
+    "source_filename": "747037649_2102268254505144_1719492414286620018_n.jpg",
+    "source_sha256": "876551e318d94ee945c84fcfde982910d56805c02d6470c2ce44500a6ee2648e"
+  },
+  {
+    "asset": "live-on-stage.mp4",
+    "poster": "live-on-stage.webp",
+    "source_filename": "AQN2OT68Kw70UPsfaCLT8JEGHMRaD2msjO1l-UGtfee9LNfdpY9-_yjuQy5W_oAqKDGhrvSN7C9L8yujw9moLdKlwi3Cw1bLmnlyYA7L2A.mp4",
+    "source_sha256": "68f5255eccb95c96d8f60cafd65a1e4d3cfb6b84ac130c9107c551f000da1fba",
+    "use": "Live on stage"
+  },
+  {
+    "asset": "behind-the-kit.mp4",
+    "poster": "behind-the-kit.webp",
+    "source_filename": "AQOyLke8AvicjYBBldLVERftc22SXFtv4i-L0NyW78giPVmAkraoZoJGZSCT_f3l_qhDVANKsLXpBLAHD3JPz1sl6my82wJ9qP3dmZX-_g.mp4",
+    "source_sha256": "8b8c7de4218de8f468150b60fc9b9e4695e429168ae5472cc4cb2cf40c9abd39",
+    "use": "Behind the kit"
+  },
+  {
+    "asset": "2-bot-rehearsal.mp3",
+    "source_filename": "2-BOT.mp3",
+    "source_sha256": "9809efa12a817b58feed0a98d4a494c3e4bc0ff067f2ac96a9dd961037ee4aef",
+    "use": "Rehearsal audio"
+  }
+]

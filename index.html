@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111110">
+  <meta name="description" content="Full Rank — original music from Bacolod City, Philippines. Watch the band live, explore the music, and step inside the rehearsal room.">
+  <title>Full Rank — Original music. Live and loud.</title>
+  <script>
+    // Preserve production analytics without tracking local preview visits.
+    if (!["localhost", "127.0.0.1", "::1"].includes(location.hostname)) {
+      const analytics = document.createElement("script");
+      analytics.async = true;
+      analytics.src = "https://www.googletagmanager.com/gtag/js?id=G-S2RKQ7Q046";
+      document.head.appendChild(analytics);
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-S2RKQ7Q046");
+    }
+  </script>
+  <link rel="preload" href="fonts/oswald-variable.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="media/band-portrait.webp" as="image">
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header shell">
+    <a class="wordmark" href="#" aria-label="Full Rank home">FULL RANK<span class="brand-dot">.</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+      <a href="#music">Music</a><a href="#videos">Videos</a><a href="#shows">Shows</a><a href="#the-band">The band</a>
+      <a class="booking-link" href="#booking">Book the band <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero shell" id="hero-section" aria-labelledby="hero-title">
+      <div class="hero-art"><img id="hero-image" src="media/band-portrait.webp" alt="The five members of Full Rank" width="1320" height="949" fetchpriority="high"></div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span>Bacolod City, Philippines</p>
+        <h1 id="hero-title" data-page-field="heroTitle">FULL RANK</h1>
+        <p class="hero-subtitle" data-page-field="heroSubtitle">Original music. Live and loud.</p>
+        <p class="hero-detail" data-page-field="heroDate" hidden></p>
+        <div class="hero-actions"><a class="button button-fill" href="#music">Explore the music <span aria-hidden="true">↗</span></a><a class="watch-link" href="#videos"><span class="play-circle" aria-hidden="true">▶</span> Watch live</a></div>
+      </div>
+      <a class="hero-scroll" href="#music"><span aria-hidden="true">↓</span> Turn it up. Stay a while.</a>
+    </section>
+    <section class="release shell" id="music" aria-labelledby="release-title">
+      <div class="release-art"><img src="media/ngiti-hanggang-langit.webp" alt="Ngiti Hanggang Langit artwork featuring Full Rank against a golden sky" width="900" height="900" loading="lazy"></div>
+      <div class="release-copy"><p class="eyebrow"><span></span>Featured music</p><h2 id="release-title">NGITI<br>HANGGANG LANGIT</h2><p class="muted">The music. The moments. Full Rank.</p><a class="text-link" href="#videos">See us live <span aria-hidden="true">↗</span></a></div>
+      <span class="release-index" aria-hidden="true">01 / THE MUSIC</span>
+    </section>
+    <section class="live-section shell section-rule" id="videos" aria-labelledby="live-title">
+      <div class="section-heading"><div><p class="eyebrow">On stage & behind the scenes</p><h2 id="live-title">LIVE / IN SESSION</h2></div><p class="section-note">Real music. Real moments.</p></div>
+      <div class="video-grid">
+        <article class="video-card"><div class="video-frame"><video id="live-video" controls playsinline preload="none" poster="media/live-on-stage.webp" aria-label="Full Rank live on stage"><source src="media/live-on-stage.mp4" type="video/mp4"><p>Your browser does not support video. <a href="media/live-on-stage.mp4">Download the live video</a>.</p></video></div><div class="video-caption"><div><p class="eyebrow">Live performance</p><h3>From the front row</h3></div><span class="media-duration">03:38</span></div></article>
+        <article class="video-card"><div class="video-frame"><video controls playsinline preload="none" poster="media/behind-the-kit.webp" aria-label="Full Rank live performance from behind the drum kit"><source src="media/behind-the-kit.mp4" type="video/mp4"><p>Your browser does not support video. <a href="media/behind-the-kit.mp4">Download the performance clip</a>.</p></video></div><div class="video-caption"><div><p class="eyebrow">A different perspective</p><h3>Behind the kit</h3></div><span class="media-duration">00:13</span></div></article>
+      </div>
+      <div class="rehearsal" id="listen"><div class="audio-heading"><p class="eyebrow"><span></span>From the rehearsal room</p><p class="muted">A little closer to the music.</p></div><div class="audio-player"><div class="track-info"><span class="track-number">01</span><div><h3>2 BOT</h3><p>Rehearsal recording · Full Rank</p></div></div><audio controls preload="metadata" aria-label="Play 2 BOT, a Full Rank rehearsal recording"><source src="media/2-bot-rehearsal.mp3" type="audio/mpeg"><a href="media/2-bot-rehearsal.mp3">Download rehearsal audio</a></audio></div><p class="media-feedback" id="media-feedback" role="status"></p></div>
+    </section>
+    <section class="band-section shell section-rule" id="the-band" aria-labelledby="band-title"><div><p class="eyebrow"><span></span>Bacolod, through and through</p><h2 id="band-title">FIVE PEOPLE.<br>ONE FULL SOUND.</h2></div><div class="band-copy"><p>We’re Full Rank. A band from Bacolod City, Philippines, making original music and bringing it to the stage.</p><p class="muted">From the rehearsal room to the front row — this is where we share what we’re working on and the moments along the way.</p></div></section>
+    <section class="shows-section shell section-rule" id="shows" aria-labelledby="shows-title"><p class="eyebrow">Meet us out there</p><div class="section-heading"><h2 id="shows-title">SEE YOU AT<br>THE NEXT SHOW.</h2><span class="show-mark" aria-hidden="true">↗</span></div><p id="events-empty" class="muted">Show announcements coming soon. Keep an ear out.</p><div id="events-grid" class="events-grid" hidden></div><div id="home-content" class="cms-content" hidden></div></section>
+    <section class="booking-section shell section-rule" id="booking" aria-labelledby="booking-title"><div><p class="eyebrow">Let’s make some noise</p><h2 id="booking-title">GOT A STAGE<br>IN MIND?</h2></div><div class="booking-copy"><p>Live shows. Collaborations.<br>Something worth turning up for.</p><p id="booking-pending" class="muted">Booking contact details coming soon.</p><a id="booking-contact" class="button button-fill" hidden>Get in touch <span aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <footer class="site-footer shell"><a class="wordmark" href="#">FULL RANK<span class="brand-dot">.</span></a><p data-page-field="footerText">© 2026 Full Rank. All rights reserved.</p><a class="back-top" href="#">Back to top ↑</a></footer>
+  <script type="module" src="/src/site.js"></script>
+</body>
+</html>

@@ -2,12 +2,41 @@
   "name": "full-rank-band",
   "version": "1.0.0",
   "private": true,
-  "description": "Full Rank Band Firebase Hosting site and CMS.",
+  "description": "Full Rank Band website and Amplify Gen 2 CMS.",
   "scripts": {
-    "firebase:emulators": "firebase emulators:start",
-    "deploy": "firebase deploy"
+    "start": "vite --mode offline",
+    "start:aws": "vite --mode sandbox",
+    "sandbox": "AWS_PROFILE=franznoel AWS_REGION=us-west-1 ampx sandbox --identifier fullrankband --once",
+    "sandbox:watch": "AWS_PROFILE=franznoel AWS_REGION=us-west-1 ampx sandbox --identifier fullrankband",
+    "build": "vite build",
+    "build:local": "vite build --mode offline",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "migrate:export": "node scripts/export-firebase.mjs",
+    "migrate:import": "AWS_PROFILE=franznoel AWS_REGION=us-west-1 node scripts/import-aws.mjs",
+    "check:build": "node scripts/check-build.mjs",
+    "verify:sandbox": "node scripts/verify-sandbox.mjs"
   },
   "devDependencies": {
-    "firebase-tools": "^15.15.0"
-  }
+    "@aws-amplify/backend": "1.25.1",
+    "@aws-amplify/backend-cli": "1.10.0",
+    "@types/aws-lambda": "8.10.164",
+    "@types/node": "26.6.5",
+    "aws-cdk": "2.1146.0",
+    "aws-cdk-lib": "2.273.0",
+    "constructs": "10.8.1",
+    "esbuild": "0.28.2",
+    "typescript": "7.0.2",
+    "vite": "8.3.4"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "3.1153.0",
+    "@aws-sdk/client-dynamodb": "3.1153.0",
+    "@aws-sdk/client-s3": "3.1153.0",
+    "@aws-sdk/credential-providers": "3.1153.0",
+    "@aws-sdk/lib-dynamodb": "3.1153.0",
+    "aws-amplify": "6.22.2"
+  },
+  "type": "module"
 }

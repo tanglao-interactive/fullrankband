@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Rank Admin</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S2RKQ7Q046"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S2RKQ7Q046');
+  </script>
+  <link rel="stylesheet" href="/styles/admin.css">
+</head>
+<body>
+  <main class="admin-shell">
+    <section class="login-panel" id="login-panel">
+      <div>
+        <p class="eyebrow">Full Rank CMS</p>
+        <h1>Admin Login</h1>
+      </div>
+
+      <p id="offline-notice" class="form-message" hidden>Offline preview: CMS editing is disabled. Start an AWS sandbox, then run npm run start:aws for administrator access.</p>
+      <form id="login-form" class="stack">
+        <label>
+          Email
+          <input id="login-email" name="email" type="email" autocomplete="email" required>
+        </label>
+        <label>
+          Password
+          <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+        </label>
+        <button type="submit">Log In</button>
+        <button type="button" id="forgot-password" class="secondary">Forgot password?</button>
+
+      </form>
+      <form id="challenge-form" class="stack" hidden>
+        <label><span id="challenge-label">New password</span><input id="challenge-response" required></label>
+        <button type="submit">Continue</button><button type="button" class="secondary" data-back-login>Back to login</button>
+      </form>
+      <form id="reset-form" class="stack" hidden>
+        <label>Reset code<input id="reset-code" autocomplete="one-time-code" required></label>
+        <label>New password<input id="reset-password" type="password" autocomplete="new-password" minlength="8" required></label>
+        <button type="submit">Reset password</button><button type="button" class="secondary" data-back-login>Back to login</button>
+      </form>
+      <p class="form-message" id="login-message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="dashboard" id="dashboard" hidden>
+      <header class="dashboard-header">
+        <div>
+          <p class="eyebrow">Full Rank CMS</p>
+          <h1>Site Content</h1>
+        </div>
+        <div class="header-actions">
+          <a href="../" target="_blank" rel="noreferrer">View Site</a>
+          <button type="button" id="profile-button" class="profile-button" title="Signed-in user">
+            <span class="profile-avatar" aria-hidden="true">FR</span>
+            <span id="profile-email">Admin</span>
+          </button>
+          <button type="button" id="logout-button" class="secondary">Log Out</button>
+        </div>
+      </header>
+
+      <nav class="tabs" aria-label="Admin sections">
+        <button type="button" class="tab active" data-tab="page-panel">Home Page</button>
+        <button type="button" class="tab" data-tab="events-panel">Events</button>
+      </nav>
+
+      <section class="panel active" id="page-panel">
+        <form id="page-form" class="editor-grid">
+          <input type="hidden" name="heroImageKey">
+          <label>
+            Hero title
+            <input name="heroTitle" type="text">
+          </label>
+          <label>
+            Hero subtitle
+            <input name="heroSubtitle" type="text">
+          </label>
+          <label>
+            Hero detail (optional)
+            <input name="heroDate" type="text">
+          </label>
+          <label>
+            Show note: venue (optional)
+            <input name="venueName" type="text">
+          </label>
+          <label>
+            Address line 1
+            <input name="addressLine1" type="text">
+          </label>
+          <label>
+            Address line 2
+            <input name="addressLine2" type="text">
+          </label>
+          <label>
+            Callout
+            <input name="callout" type="text">
+          </label>
+          <label>
+            Footer text
+            <input name="footerText" type="text">
+          </label>
+          <label class="wide">
+            Hero image
+            <input id="hero-image" type="file" accept="image/*">
+          </label>
+          <label class="wide">
+            Hero image URL
+            <input name="heroImageUrl" type="text" inputmode="url" placeholder="media/band-portrait.webp or https://…">
+          </label>
+          <label class="wide">
+            Booking email
+            <input name="bookingEmail" type="email" placeholder="admin@fullrankband.com">
+          </label>
+          <label class="wide">
+            Custom HTML
+            <textarea name="customHtml" rows="12" spellcheck="false"></textarea>
+          </label>
+          <div class="form-actions wide">
+            <button type="submit">Save Home Page</button>
+            <p class="form-message" id="page-message"></p>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel" id="events-panel">
+        <div class="events-layout">
+          <aside class="event-list-wrap">
+            <button type="button" id="new-event-button">New Event</button>
+            <div class="event-list" id="event-list"></div>
+          </aside>
+
+          <form id="event-form" class="editor-grid">
+            <input type="hidden" name="id">
+            <input type="hidden" name="imageKey">
+            <label>
+              Title
+              <input name="title" type="text" required>
+            </label>
+            <label>
+              Sort order
+              <input name="sortOrder" type="number" value="0">
+            </label>
+            <label>
+              Date
+              <input name="date" type="text" placeholder="Dec 28">
+            </label>
+            <label>
+              Time
+              <input name="time" type="text" placeholder="9 PM">
+            </label>
+            <label>
+              Venue
+              <input name="venue" type="text">
+            </label>
+            <label>
+              Ticket info
+              <input name="ticketInfo" type="text" placeholder="NO DOOR CHARGE">
+            </label>
+            <label class="wide">
+              Address
+              <input name="address" type="text">
+            </label>
+            <label class="wide">
+              Event image
+              <input id="event-image" type="file" accept="image/*">
+            </label>
+            <label class="wide">
+              Event image URL
+              <input name="imageUrl" type="url">
+            </label>
+            <label class="wide">
+              Description
+              <textarea name="description" rows="5"></textarea>
+            </label>
+            <label class="checkbox wide">
+              <input name="isPublished" type="checkbox" checked>
+              Published
+            </label>
+            <div class="form-actions wide">
+              <button type="submit">Save Event</button>
+              <button type="button" id="delete-event-button" class="danger">Delete Event</button>
+              <p class="form-message" id="event-message"></p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </section>
+  </main>
+  <script type="module" src="/src/admin.js"></script>
+</body>
+</html>

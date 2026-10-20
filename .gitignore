@@ -67,3 +67,12 @@ node_modules/
 
 # dataconnect generated files
 .dataconnect
+
+# Amplify generated configuration, builds, and private migration exports
+amplify_outputs.json
+.amplify/
+dist/
+.env*
+!.env.example
+migration-backups/
+*.tsbuildinfo

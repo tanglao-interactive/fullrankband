@@ -1,4 +1,5 @@
 (function () {
+  if (!window.firebase || !firebase.apps.length) return;
   const emulatorHosts = new Set(["localhost", "127.0.0.1", "::1"]);
   const useEmulators = emulatorHosts.has(window.location.hostname);
 
@@ -13,7 +14,7 @@
   }
 
   if (useEmulators) {
-    window.fullRankFirebase.db.useEmulator("127.0.0.1", 8080);
+    window.fullRankFirebase.db.useEmulator("127.0.0.1", 8180);
     window.fullRankFirebase.storage.useEmulator("127.0.0.1", 9199);
 
     if (window.fullRankFirebase.auth) {

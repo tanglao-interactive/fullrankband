@@ -6,18 +6,7 @@
   let events = [];
   let selectedEventId = "";
 
-  const defaults = {
-    heroTitle: "FULL RANK",
-    heroSubtitle: "Indie Rock Night",
-    heroDate: "Dec 28 - 9 PM",
-    venueName: "Moon Moon's Bar & Cafe",
-    addressLine1: "Triangle Island Plaza, 2nd Floor Narra Street",
-    addressLine2: "Shopping - Bacolod City",
-    callout: "NO DOOR CHARGE",
-    footerText: "\u00a9 2024 Full Rank | All Rights Reserved",
-    heroImageUrl: "images/full-rank-bank-wish-bg.jpeg",
-    customHtml: ""
-  };
+  const defaults = window.fullRankPageDefaults;
 
   const loginPanel = document.getElementById("login-panel");
   const dashboard = document.getElementById("dashboard");
