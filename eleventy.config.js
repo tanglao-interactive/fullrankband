@@ -7,6 +7,9 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ public: '.' });
   eleventyConfig.addWatchTarget('src/');
   eleventyConfig.addWatchTarget('amplify_outputs.json');
+  eleventyConfig.addCollection('sitemapPages', collection => collection.getAll().filter(page =>
+    page.url && !page.url.startsWith('/admin') &&
+    (page.url.endsWith('/') || page.url.endsWith('.html'))));
   eleventyConfig.on('eleventy.before', async () => {
     if (firstBuild) { rmSync('dist', { recursive: true, force: true }); firstBuild = false; }
     const offline = process.env.FULLRANK_OFFLINE === '1';
