@@ -43,5 +43,21 @@
     "source_audio_sha256": "61fd1f635c0857b10e5057ed3bbd7f52c65aa54d7033fc005a93cd378ac16ba9",
     "processing": "Original 360x364 H.264 video retained; audio converted to AAC, muxed with fast start. Poster from 8 seconds.",
     "use": "Sawi live at 11th Hub"
+  },
+  {
+    "asset": "in-the-room.mp4",
+    "poster": "in-the-room.webp",
+    "source_filename": "AQPMq5qnZfZ95FajXpmnf9mPDiKJXHZpnipOrqQNfp26eehNBVhtrAOiNXu6rjlJ3eWDYT0PqOH9nU41LWZRbMh8mJ5RkbWUpG2YQJvISg.mp4",
+    "source_sha256": "4dcbeca4446ebd3ab00c85b2ff3d87e9aa1df1b1c7c4589a9853fd91451089c2",
+    "processing": "Original H.264 video and AAC audio retained; MP4 fast start enabled.",
+    "use": "In the room"
+  },
+  {
+    "asset": "live-stage-session.mp4",
+    "poster": "live-stage-session.webp",
+    "source_filename": "AQNz86sLnfIkafIQbIM0-4Pj8U8lYCo1KJ09GFRfBKs0CHJimA7AdvWYeu9etKXvUG0ZQgWpvoBXO2cEATfG_a24nYZN-x16ZXSUOAqJBg.mp4",
+    "source_sha256": "3d1775e3c65d10e44953fc9886cee7fb844f669d210702ee99b3a232efff0add",
+    "processing": "Original H.264 video and AAC audio retained; MP4 fast start enabled.",
+    "use": "Live from the stage"
   }
 ]
